@@ -4,9 +4,11 @@ function searchById() {
 
         return;
     }
+
     var resultDiv = document.getElementById('result');
-    var ids = ["UnDestino", "Valiente", "Prófugos", "Alas", "VivesEnMí", "SiempreJuntos", "AlzoMiBandera"]; // IDs 
-    corrigidos
+var ids = ["UnDestino", "Valiente", "Prófugos", "Alas", "VivesEnMí", "SiempreJuntos", "AlzoMiBandera","TengoUnCorazón","Vuelo","Invisibles","Sobre ruedas","Chicas así","Qué más da","En ti","ARodarMiVida","i'dBeCrazy","LaVidaEsUnSueño"]; 
+
+// IDs corrigidos
     var found = false;
     ids.forEach(function (id) {
         var div = document.getElementById(id);
