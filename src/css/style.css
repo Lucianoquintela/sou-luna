@@ -3,6 +3,11 @@ body {
     color: white;
     
 }
+
+.listMusicsText{
+   margin-left:20px; 
+}
+
 .area-botoes{
     display: flex;
  
