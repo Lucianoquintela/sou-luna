@@ -1,35 +1,43 @@
 body {
-    background-color: black;
+    background-color: #1C1C1C;
     color: white;
-    
 }
 
-.listMusicsText{
-   margin-left:20px; 
+h2 {
+    overflow: hidden;
 }
 
-.area-botoes{
+.listMusicsText {
+    margin-left: 13%;
+    margin-top: 100px;
+}
+
+.area-botoes {
     display: flex;
- 
+
     gap: 10px;
     justify-content: center;
+
 }
-.videos-secao{
+
+.videos-secao {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 10%;
-    justify-content: center;  
+    gap: 20px;
+    margin: 0 10% 10% 10%;
+    justify-content: center;
 }
-header{
+
+footer {
     background-color: rgb(66, 75, 72);
     height: 190px;
     width: 100%;
 }
+
 iframe {
-    width: 350px;
+    width: 100%;
     height: 220px;
-    margin-top: 10px;   
+    margin-top: 10px;
 }
 
 .logoSouLuna {
@@ -44,7 +52,8 @@ iframe {
     gap: 10px;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
+
 }
 
 /* Esconde as divs de vídeo por padrão 
@@ -52,15 +61,21 @@ iframe {
         #Valiente,
         #Prófugos,
         #
-
-
         #Alas {
             display: none;
-        }
+       }
 */
 
 .textoAutor {
     margin-top: -18px;
+    color: tomato;
+    overflow: hidden;
+    max-width: 200px;
+    height: 100px;
+    background-color: rgb(48, 57, 57);
+    border-radius: 10px;
+    display: flex;
+    
 }
 
 hr {
@@ -79,11 +94,11 @@ input {
 }
 
 .result {
-    margin-top: 30px;
+    margin-top: 0px;
     margin: 10px;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -102,24 +117,31 @@ button:hover {
 }
 
 .areaTitulo {
-    margin-left: 30px;
+    padding: 10px;
     margin-top: -20px;
-   
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.botao-like{
+.botao-like {
     background-color: rgb(54, 139, 111);
     color: rgb(255, 255, 255);
 }
 
 @media(max-width: 480px) {
-
     iframe {
         width: 100%;
         margin-top: 10px;
     }
-    .videos-secao{
+
+    .videos-secao {
         display: flex;
+        
         flex-direction: column;
+        gap: 20px;
+        margin: 0%;
+    }
+
+    .listMusicsText {
+        margin-top: 40px;
     }
 }

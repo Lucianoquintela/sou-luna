@@ -1,26 +1,49 @@
-function searchById() {
-    var input = document.getElementById('searchInput').value.toLowerCase();
-    if (input.trim() === "") {
 
+
+function searchById() {
+    var input = removeSpecialChars(document.getElementById('searchInput').value.trim().toLowerCase());
+
+    var resultDiv = document.getElementById('result');
+    var videos = document.querySelectorAll('.videos-secao > div');
+    var found = false;
+
+    // Resetar a visibilidade dos vídeos antes de iniciar a nova pesquisa
+    videos.forEach(function (video) {
+        video.style.display = 'block';
+    });
+
+    resultDiv.innerHTML = ''; // Limpa o resultado da pesquisa
+
+    if (input === "") {
+        // Se a entrada estiver vazia, mostramos todos os vídeos e saímos da função
+        videos.forEach(function (video) {
+            video.style.display = 'block';
+        });
+        document.getElementById('voltarButton').style.display = 'none'; // Esconde o botão "Voltar"
         return;
     }
 
-    var resultDiv = document.getElementById('result');
-var ids = ["UnDestino", "Valiente", "Prófugos", "Alas", "VivesEnMí", "SiempreJuntos", "AlzoMiBandera","TengoUnCorazón","Vuelo","Invisibles","Sobre ruedas","Chicas así","Qué más da","En ti","ARodarMiVida","i'dBeCrazy","LaVidaEsUnSueño"]; 
+    videos.forEach(function (video) {
+        var title = removeSpecialChars(video.querySelector('h2').textContent.trim().toLowerCase());
 
-// IDs corrigidos
-    var found = false;
-    ids.forEach(function (id) {
-        var div = document.getElementById(id);
-        if (id.toLowerCase().indexOf(input) !== -1) { // Verifica se a entrada do usuário está contida no ID
-            div.style.display = "block"; // Mostra a div do vídeo encontrado
-            resultDiv.innerHTML = ""; // Limpa o resultado da pesquisa
+        if (title.includes(input)) { // Verifica se a entrada do usuário está contida no título
+            video.style.display = 'block'; // Mostra a div do vídeo encontrado
+            resultDiv.appendChild(video.cloneNode(true)); // Adiciona a div encontrada na área de resultados
             found = true;
         } else {
-            div.style.display = "none"; // Esconde as outras divs de vídeo
+            video.style.display = 'none'; // Esconde as outras divs de vídeo
         }
     });
-    if (!found) {
+
+    if (found) {
+        document.getElementById('voltarButton').style.display = 'block'; // Mostra o botão "Voltar"
+    } else {
         resultDiv.innerHTML = "Nenhum resultado encontrado para: " + input;
+        document.getElementById('voltarButton').style.display = 'none'; // Esconde o botão "Voltar" se nada for encontrado
     }
 }
+
+function removeSpecialChars(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\w\s]/g, '');
+}
+
