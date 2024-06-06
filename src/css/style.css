@@ -1,3 +1,5 @@
+
+
 body {
     background-color: #1C1C1C;
     color: white;
@@ -15,7 +17,7 @@ h2 {
 .area-botoes {
     display: flex;
 
-    gap: 10px;
+   
     justify-content: center;
 
 }
@@ -56,31 +58,15 @@ iframe {
 
 }
 
-/* Esconde as divs de vídeo por padrão 
-        #UnDestino,
-        #Valiente,
-        #Prófugos,
-        #
-        #Alas {
-            display: none;
-       }
-*/
-
-.textoAutor {
+p.textoAutor {
     margin-top: -18px;
-    color: tomato;
-    overflow: hidden;
-    max-width: 200px;
+    color: #5CC6BA;
+   padding: 10px;
+    max-width: 260px;
     height: 100px;
     background-color: rgb(48, 57, 57);
     border-radius: 10px;
     display: flex;
-    
-}
-
-hr {
-    margin-left: 0px;
-    width: 90%;
 }
 
 input {
@@ -120,7 +106,9 @@ button:hover {
     padding: 10px;
     margin-top: -20px;
     background-color: rgba(0, 0, 0, 0.5);
+   
 }
+
 
 .botao-like {
     background-color: rgb(54, 139, 111);
@@ -144,4 +132,11 @@ button:hover {
     .listMusicsText {
         margin-top: 40px;
     }
+
+    
+.textoAutor {
+    
+    min-width:330px;
+    
+}
 }

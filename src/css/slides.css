@@ -4,6 +4,7 @@ section.slider {
     height: auto;
     overflow: hidden;
     position: relative;
+    margin-top: 100px;
 }
 .slider-content {
     display: flex;
@@ -40,3 +41,12 @@ section.slider {
 .nav-manual .manual-btn:hover, .nav-manual .manual-btn.active {
     background-color: black;
 }
+
+@media(max-width: 480px) {
+  section.slider {
+    
+    width: 350px;  /* tamanhos slides*/ 
+    
+}
+}
+
